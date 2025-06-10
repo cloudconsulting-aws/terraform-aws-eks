@@ -5,7 +5,9 @@ repos:
       - id: terraform_fmt
       - id: terraform_docs
         args:
-          - '--args=--lockfile=false'
+          - --hook-config=--path-to-file=readme.md
+          - --hook-config=--add-to-existing-file=true
+          - --hook-config=--create-file-if-not-exists=true
       - id: terraform_tflint
         args:
           - '--args=--only=terraform_deprecated_interpolation'
